@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.metrodeparis.MetroDeParisController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.metrodeparis.MetroDeParisController">
+   <top>
+      <Label alignment="CENTER" text="Lab8_MetroParis" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></Label>
+   </top>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0">
+               <children>
+                  <ImageView fitHeight="139.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../rsc/RATP.png" />
+                     </image>
+                  </ImageView>
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label text="Seleziona una Stazione di Partenza:" />
+                        <ComboBox fx:id="cmbPartenza" prefWidth="150.0" />
+                        <Label text="Seleziona una Stazione di Arrivo:" />
+                        <ComboBox fx:id="cmbArrivo" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <Pane>
+                     <children>
+                        <Button fx:id="btnCalcola" layoutX="3.0" layoutY="45.0" mnemonicParsing="false" onAction="#doCalcola" text="Calcola distanza" />
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <TextArea fx:id="txtResult" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
 </BorderPane>
